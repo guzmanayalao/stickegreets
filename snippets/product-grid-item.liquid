@@ -49,8 +49,8 @@
       - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
 
   {% endcomment %}
- <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="">
-  <div class="collection-image">
+ <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="collection-image">
+  <div class="">
     {% if collection.image %} 
       {{ collection.image.src | img_url: 'large' | img_tag: collection_title }}
     {% else %}
