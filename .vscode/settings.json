@@ -1,0 +1,4 @@
+{
+    "terminal.integrated.shell.linux": "/bin/cmd",
+    "terminal.integrated.shell.osx": "/bin/cmd"
+}
