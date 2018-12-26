@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 228 228">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.18" x2="0.204" y2="1.113" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f4df62"/>
+      <stop offset="1" stop-color="#ffbd14"/>
+    </linearGradient>
+  </defs>
+  <circle id="Yellow_Circle_Left" data-name="Yellow Circle Left" class="cls-1" cx="114" cy="114" r="114"/>
+</svg>
