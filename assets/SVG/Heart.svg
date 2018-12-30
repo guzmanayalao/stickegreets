@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 303.228 279.422">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f4df62"/>
+      <stop offset="1" stop-color="#ffbd14"/>
+    </linearGradient>
+  </defs>
+  <g id="Heart" transform="translate(-531.136 -2652.553)">
+    <ellipse id="Ellipse_14" data-name="Ellipse 14" class="cls-1" cx="81.527" cy="114" rx="81.527" ry="114" transform="translate(786.345 2850.447) rotate(150)"/>
+    <ellipse id="Ellipse_13" data-name="Ellipse 13" class="cls-1" cx="81.527" cy="114" rx="81.527" ry="114" transform="translate(693.154 2652.553) rotate(30)"/>
+  </g>
+</svg>

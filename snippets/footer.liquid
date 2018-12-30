@@ -1,0 +1,85 @@
+<footer>
+{% if settings.footer_newsletter_enable %}
+  <div class="footer-wrapper">
+    <div class="newsletter">
+      {% comment %}
+        MailChimp is the go-to newsletter service for Shopify.
+        Use the link below to find your MailChimp form action
+        and insert it in your site settings.
+
+        If the form action URL is not set in the theme settings,
+        it will fallback to a customer form so you can still capture the email.
+
+        MailChimp newsletter integration and requirement:
+          - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
+      {% endcomment %}
+      <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
+      {% if settings.newsletter_form_action != blank %}
+        <form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+          <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+          <span class="input-group-btn">
+            <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+          </span>
+        </form>
+      {% else %}
+        {% form 'customer' %}
+          {{ form.errors | default_errors }}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          {% else %}
+            <div class="input-group">
+              <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <span class="input-group-btn">
+                <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+              </span>
+            </div>
+          {% endif %}
+        {% endform %}
+      {% endif %}
+    </div>
+    
+  <div class="about-us">
+  <h3>About Us</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nesciunt nemo iste eius repellendus non ad officia itaque error tempora est eum quibusdam mollitia, dolorem laborum quo temporibus expedita asperiores provident voluptas earum ab quam consectetur omnis! Molestias, sint id.
+    </p>
+  </div>
+  <div class="reach-out">
+  <h3>Reach Out</h3>
+    <ul>
+      <li>123 Main Street</li>
+      <li>New York City</li>
+      <li>NY 123456</li>
+      <li>Call Us: +1 234 567 8900</li>
+      <li>Email: info@stickegreets</li>
+    </ul>
+  </div>
+  <div class="navigate">
+    <li>Lorem.</li>
+    <li>Suscipit.</li>
+    <li>Maxime.</li>
+    <li>Reprehenderit.</li>
+    <li>Saepe.</li>
+  </div>
+
+  </div>
+{% endif %}
+
+<svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1367.984 355.525">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffa0a0"/>
+      <stop offset="1" stop-color="#f47cbf"/>
+    </linearGradient>
+  </defs>
+  <path id="Footer" class="cls-1" d="M0,3062.4c687.995,155.22,1367.984,0,1367.984,0v355.525H0S0,3107.068,0,3062.4Z" transform="translate(0 -3062.4)"/>
+</svg>
+
+
+</footer>

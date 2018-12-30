@@ -29,7 +29,10 @@
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-
+  {{ "https://fonts.googleapis.com/css?family=Open+Sans" | stylesheet_tag  }}
+  {{ "https://use.fontawesome.com/releases/v5.6.3/css/all.css" | stylesheet_tag }}
+  {{ "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" | stylesheet_tag }}
+  {{ "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" | stylesheet_tag }}
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
@@ -223,102 +226,18 @@
     </main>
 
     <!-- begin site-footer -->
-    <footer class="site-footer small--text-center" role="contentinfo">
-      <div class="wrapper">
-        <div class="grid">
-          {% if settings.footer_social_enable %}
-            <div class="grid__item large--one-third medium--one-half">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if settings.social_facebook_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-            </div>
-          {% endif %}
-          {% if settings.footer_newsletter_enable %}
-            <div class="grid__item large--one-third push--large--one-third medium--one-half">
-              {% comment %}
-                MailChimp is the go-to newsletter service for Shopify.
-                Use the link below to find your MailChimp form action
-                and insert it in your site settings.
+    <div class="footer">
+    {% include 'footer' %}
+    </div>
 
-                If the form action URL is not set in the theme settings,
-                it will fallback to a customer form so you can still capture the email.
-
-                MailChimp newsletter integration and requirement:
-                 - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
-              {% endcomment %}
-              <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
-              {% if settings.newsletter_form_action != blank %}
-                <form action="{{ settings.newsletter_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                  <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                  <span class="input-group-btn">
-                    <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                  </span>
-                </form>
-              {% else %}
-                {% form 'customer' %}
-                  {{ form.errors | default_errors }}
-                  {% if form.posted_successfully? %}
-                    <p class="note form-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
-                  {% else %}
-                    <div class="input-group">
-                      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                      <input type="hidden" name="contact[tags]" value="newsletter">
-                      <span class="input-group-btn">
-                        <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                      </span>
-                    </div>
-                  {% endif %}
-                {% endform %}
-              {% endif %}
-
-            </div>
-          {% endif %}
-          <div class="grid__item text-center">
-            <hr>
-            {% comment %}
-              Loop through available payment methods and show their icons.
-            {% endcomment %}
-            {% unless shop.enabled_payment_types == empty %}
-              {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
-              <h4 class="text-center">{{ 'layout.footer.accepted_payments' | t }}</h4>
-              <ul class="inline-list payment-icons">
-                {% for type in shop.enabled_payment_types %}
-                  {% if payment_icons_available contains type %}
-                    <li>
-                      <span class="icon-fallback-text">
-                        <span class="icon icon-{{type}}" aria-hidden="true"></span>
-                        <span class="fallback-text">{{ type | replace: '_',' '}}</span>
-                      </span>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            {% endunless %}
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- //site-footer -->
-  </div>
+  </div> 
 
   {{ 'fastclick.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
+  {{' //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
+  {{ 'wow.min.js' | asset_url | script_tag }}
+
+
 
   {% comment %}
     Template-specific js
@@ -358,6 +277,18 @@
       });
     </script>
   {% endif %}
+<script>
+  new WOW().init();
+$(window).scroll(function() {
+    console.log("jquery working"); 
+    let scrollTop = window.scrollY / 3 + 'px';
+    $(".category-svg").css("transform", "translateY(-" + scrollTop + ")");
+    $(".simple-svg").css("transform", "translateY(-" + scrollTop + ")");
+    $(".instruction-svg").css("transform", "translateY(-" + scrollTop + ")");
+    $(".Landing-Shape-BG").css("transform", "translateY(-" + scrollTop + ") scaleX(-1)");
 
+    $(".emotion-svg").css("transform", "translateY(-" + scrollTop + ")");
+})
+</script>
 </body>
 </html>

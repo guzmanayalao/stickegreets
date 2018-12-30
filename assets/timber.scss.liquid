@@ -1,10 +1,13 @@
+body, h1, h2, p, input {
+  font-family: 'Open Sans' !important;
+}
 .site-headerOZ {
   height: 100vh;
-  button {
+  button {  
       width: 150px;
       margin: 0 auto;
       height: 50px;
-      box-shadow: 0px 0px 6px 0px rgba(133, 133, 133, 1);
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.192);
       border-radius: 10px;
       text-transform: uppercase;
       font-weight: bold;
@@ -12,31 +15,55 @@
   }
 }
 
+.button-wrapper2 button {  
+  width: 150px;
+  margin: 0 auto;
+  height: 50px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.192);
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #01ACDA;
+}
 .Landing-Shape-BG {
   position: absolute;
   top: -82px;
-  right: 0;
+  left: 0;
   width: 1245px;
   height: 755px;
   z-index: -1;
+  transform: translateY(0) scaleX(-1); 
 }
 
 .heading-container {
-  width: 455px;
+  max-width: 605px;
+  min-width: 455px;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 4em;
   color: #01ACDA;
   margin-bottom: .15em !important;
   .bold {
       font-weight: bold;
   }
 }
-
+header img {
+  width: 500px;
+}
+.card-svg > g {
+  width: 100%;
+  height: 100%; 
+}
 .button-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: -50px;
+}
+.button-wrapper2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; 
 }
 
 .subheading-container {
@@ -75,8 +102,7 @@
   position: absolute; 
   height: 640px;
   width: 640px;
-  left: -480px; 
-  top: -200px; 
+  left: -480px;  
   z-index: 30; 
 }
 .collection-image {
@@ -130,8 +156,8 @@ box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
   height: 640px;
   width: 640px;
   right: -480px; 
-  top: -200px; 
   z-index: 30; 
+  top: 200px;
 }
 .instruction-svg { 
   height: 230px;
@@ -139,10 +165,11 @@ box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
   left: -200px; 
   position: absolute; 
   z-index: -33; 
+  top: 400px; 
 }
 .simple-instruction {
   width: 900px;
-  height: 360px; 
+  min-height: 360px; 
   background: white; 
   border-radius: 30px; 
   -webkit-box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
@@ -151,9 +178,164 @@ box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
   margin: 0 auto;   
   position: relative; 
   margin-top: 100px; 
-  padding: 20px; 
+  padding: 20px 20px 40px 20px; 
+  h2 {
+    font-weight: 100; 
+    span {
+      font-weight: bold; 
+    }
+  }
+}
+.instruction-wrapper { 
+  display: flex; 
+  justify-content: space-around;
+  margin-top: 40px; 
+
+}
+.instruction1, .instruction2, .instruction3 {
+  display: flex;
+  flex-direction: column;
+  text-align: center; 
+  h2 {
+    background: #01ACDA;
+    border-radius: 100%;
+    padding: 5px; 
+    width: 36px;
+    height: 36px; 
+    box-sizing: border-box;
+    margin: auto; 
+    color: white;  
+    font-size: 16pt; 
+    line-height: 1.2; 
+    font-weight: 100; 
+  }
+  h3 {
+    font-weight: 100; 
+    margin: 20px; 
+    color: #01ACDA; 
+  }
+  p {
+    margin: 20px; 
+    color: #b9b9b9; 
+  }
+}
+#emotion {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  padding-top: 100px;
+  padding-bottom: 100px; 
+  position: relative;
+}
+.emotion-svg {
+  position: absolute;
+  right: 500px;
+  top: 600px; 
+  height: 190px;
+  width: 190px;
+  z-index: -1; 
+
+}
+.card-Left {
+  width: 460px;
+  min-height: 220px;
+  padding: 40px;
+  background: white;
+  -webkit-box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
+  -moz-box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
+  box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1); 
+  border-radius: 20px; 
+  color: #b9b9b9; 
+  h2 {
+    color: #01ACDA;
+    text-align: center;
+    font-weight: 100;  
+  }
+}
+.card-right {
+  width: 460px;
+  min-height: 220px;
+  padding: 40px;
+  background: white;
+  -webkit-box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
+  -moz-box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1);
+  box-shadow: -2px 0px 15px -1px rgba(0,0,0,0.1); 
+  margin-top: -30px; 
+  position: relative;
+  border-radius: 20px; 
+  z-index: 100; 
+  color: #b9b9b9; 
+  h2 {
+    color: #01ACDA;
+    text-align: center;
+    font-weight: 100; 
+  }
 }
 
+.background { 
+  height: 320px; 
+  background: url("https://cdn.shopify.com/s/files/1/0014/1043/3093/files/family_50.jpeg?7755183880037044597");
+  background-size: cover;
+  background-position: center center; 
+  background-attachment: fixed; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-size: 24pt;
+  color: white;
+  font-weight: bold; 
+  font-family: 'Open sans', sans-serif; 
+}
+.background, .background > img {
+  width: 100%; 
+  overflow: hidden; 
+}
+.background > img {
+  transform: translateY(-1000px);
+}
+section#heart {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+  padding-top: 100px;
+  font-weight: bold; 
+  color: #FFBD14;
+}
+.heart-svg {
+  width: 300px;
+  height: 280px;
+  margin: 0 auto; 
+}
+footer {
+  height: 355px;
+  position: relative;
+  width: 100%; 
+  margin-top: 10%; 
+}
+.footer-wrapper {
+  z-index: 1; 
+  position: absolute; 
+  display: flex; 
+  justify-content: space-around;
+  align-items: flex-start; 
+  bottom: 10%;
+  width: 100%;
+  color: white; 
+  font-family: 'Open Sans', sans-serif;
+  h3 {
+    text-transform: uppercase;
+  }  
+
+
+}
+.newsletter, .about-us {
+  width: 260px; 
+}
+.footer-svg {
+  position: absolute; 
+  bottom: 0; 
+}
 /*============================================================================
   Shopify Timber
   Copyright 2016 Shopify Inc.

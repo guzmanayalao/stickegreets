@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.226 557.605">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #01acda;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        filter: url(#Path_87);
+      }
+
+      .cls-6 {
+        filter: url(#Path_88);
+      }
+    </style>
+    <filter id="Path_88" x="51" y="0" width="278.094" height="85.762" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_87" x="0" y="16.762" width="472.226" height="540.843" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="20" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_59" data-name="Group 59" transform="translate(-644 -113.667)">
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, 644, 113.67)">
+      <path id="Path_88-2" data-name="Path 88" class="cls-1" d="M704,276.429l260.094-67.762v67.762Z" transform="translate(-644 -202.67)"/>
+    </g>
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, 644, 113.67)">
+      <g id="Path_87-2" data-name="Path 87" class="cls-2" transform="translate(60 73.76)">
+        <path class="cls-3" d="M 347.2257690429688 415.8427734375 L 4.999980449676514 415.8427734375 L 4.999980449676514 4.999982357025146 L 347.2257690429688 4.999982357025146 L 347.2257690429688 415.8427734375 Z"/>
+        <path class="cls-4" d="M 10 10 L 10 410.8427429199219 L 342.2257385253906 410.8427429199219 L 342.2257385253906 10 L 10 10 M 0 0 L 352.2257385253906 0 L 352.2257385253906 420.8427429199219 L 0 420.8427429199219 L 0 0 Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
